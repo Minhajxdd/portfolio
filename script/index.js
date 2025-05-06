@@ -40,10 +40,10 @@ mobileMenuButton.addEventListener("click", function () {
 const typingText = document.getElementById("typing-text");
 const cursor = document.getElementById("cursor");
 const textArray = [
-  "Frontend Developer",
-  "UI/UX Designer",
-  "Web Enthusiast",
-  "Problem Solver",
+  "Backend Developer",
+  "Pc Enthusiast",
+  "Programmer",
+  "Engineer",
 ];
 let textIndex = 0;
 let charIndex = 0;
