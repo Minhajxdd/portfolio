@@ -1,109 +1,159 @@
-// initilizing aos
-AOS.init();
+document.getElementById("year").textContent = new Date().getFullYear();
 
-const toggleCheckbox = document.getElementById("toggle");
-const html = document.documentElement;
+// Initialize typed.js
+document.addEventListener("DOMContentLoaded", function () {
+  const typed = new Typed("#typed-text", {
+    strings: [
+      "Frontend Developer",
+      "Backend Engineer",
+      "UI/UX Designer",
+      "Full Stack Developer",
+    ],
+    typeSpeed: 70,
+    backSpeed: 50,
+    backDelay: 1000,
+    loop: true,
+  });
 
-(function applyTheme() {
-  if (
-    localStorage.theme === "dark" ||
-    (!("theme" in localStorage) &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches)
-  ) {
-    html.classList.add("dark");
-    toggleCheckbox.checked = true;
-  } else {
-    html.classList.remove("dark");
-    toggleCheckbox.checked = false;
-  }
-})();
+  // Theme switching
+  const themeSwitch = document.getElementById("themeSwitch");
+  const body = document.body;
 
-toggleCheckbox.addEventListener("change", function () {
-  if (this.checked) {
-    html.classList.add("dark");
-    localStorage.theme = "dark";
-  } else {
-    html.classList.remove("dark");
-    localStorage.theme = "light";
-  }
-});
-
-// Mobile menu toggle
-const mobileMenuButton = document.getElementById("mobile-menu-button");
-const mobileMenu = document.getElementById("mobile-menu");
-
-mobileMenuButton.addEventListener("click", function () {
-  mobileMenu.classList.toggle("hidden");
-});
-
-// Typing effect for the subtitle
-const typingText = document.getElementById("typing-text");
-const cursor = document.getElementById("cursor");
-const textArray = [
-  "Backend Developer",
-  "Pc Enthusiast",
-  "Programmer",
-  "Engineer",
-];
-let textIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-let typingDelay = 150;
-
-function type() {
-  const currentText = textArray[textIndex];
-
-  if (isDeleting) {
-    // Removing characters
-    typingText.textContent = currentText.substring(0, charIndex - 1);
-    charIndex--;
-    typingDelay = 50; // Delete faster
-  } else {
-    // Adding characters
-    typingText.textContent = currentText.substring(0, charIndex + 1);
-    charIndex++;
-    typingDelay = 150; // Type slower
-  }
-
-  // When word is complete
-  if (!isDeleting && charIndex === currentText.length) {
-    isDeleting = true;
-    typingDelay = 1500; // Pause at end
-  }
-
-  // When deletion is complete
-  if (isDeleting && charIndex === 0) {
-    isDeleting = false;
-    textIndex = (textIndex + 1) % textArray.length; // Move to next word
-    typingDelay = 500; // Pause before typing next word
-  }
-
-  setTimeout(type, typingDelay);
-}
-
-// Start the typing effect
-setTimeout(type, 1000);
-
-// Animate skill bars on scroll
-const skillProgress = document.querySelectorAll(".skill-progress");
-
-function showSkills() {
-  skillProgress.forEach((skill) => {
-    const skillPosition = skill.getBoundingClientRect().top;
-    const screenPosition = window.innerHeight / 1.3;
-
-    if (skillPosition < screenPosition) {
-      // Read the original target from the HTML attribute
-      const target = skill.parentElement.getAttribute("data-progress");
-      skill.style.width = target;
+  themeSwitch.addEventListener("click", () => {
+    if (body.classList.contains("dark")) {
+      body.classList.remove("dark");
+      body.classList.add("light");
+      themeSwitch.classList.remove("theme-switch-dark");
+      themeSwitch.classList.add("theme-switch-light");
+    } else {
+      body.classList.remove("light");
+      body.classList.add("dark");
+      themeSwitch.classList.remove("theme-switch-light");
+      themeSwitch.classList.add("theme-switch-dark");
     }
   });
-}
 
-// Set initial width to 0 (don’t overwrite data-progress!)
-skillProgress.forEach((skill) => {
-  skill.style.width = "0";
+  // Mobile menu
+  const mobileMenuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  mobileMenuButton.addEventListener("click", () => {
+    if (mobileMenu.classList.contains("menu-hidden")) {
+      mobileMenu.classList.remove("menu-hidden");
+      mobileMenu.classList.add("menu-visible");
+    } else {
+      mobileMenu.classList.remove("menu-visible");
+      mobileMenu.classList.add("menu-hidden");
+    }
+  });
+
+  // Close mobile menu when clicking on a link
+  const mobileLinks = mobileMenu.querySelectorAll("a");
+  mobileLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.remove("menu-visible");
+      mobileMenu.classList.add("menu-hidden");
+    });
+  });
+
+  // Navbar scroll animation
+  const navbar = document.getElementById("navbar");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
+      navbar.classList.add("glass");
+      navbar.classList.add("shadow-lg");
+      navbar.style.padding = "0.5rem 0";
+    } else {
+      navbar.classList.remove("glass");
+      navbar.classList.remove("shadow-lg");
+      navbar.style.padding = "1rem 0";
+    }
+  });
+
+  // GSAP animations
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Hero section animations
+  gsap.from(".profile-card", {
+    opacity: 0,
+    y: 50,
+    rotation: 5,
+    duration: 1,
+    ease: "power3.out",
+  });
+
+  gsap.from("#home h1", {
+    opacity: 0,
+    y: 30,
+    duration: 1,
+    delay: 0.3,
+    ease: "power3.out",
+  });
+
+  gsap.from("#home .text-xl", {
+    opacity: 0,
+    y: 30,
+    duration: 1,
+    delay: 0.5,
+    ease: "power3.out",
+  });
+
+  gsap.from("#home p", {
+    opacity: 0,
+    y: 30,
+    duration: 1,
+    delay: 0.7,
+    ease: "power3.out",
+  });
+
+  gsap.from("#home .flex.flex-wrap", {
+    opacity: 0,
+    y: 30,
+    duration: 1,
+    delay: 0.9,
+    ease: "power3.out",
+  });
+
+  // About section animations
+  gsap.from("#about h2", {
+    scrollTrigger: {
+      trigger: "#about",
+      start: "top 80%",
+    },
+    opacity: 0,
+    y: 50,
+    duration: 0.8,
+  });
+
+  gsap.from("#about .w-24", {
+    scrollTrigger: {
+      trigger: "#about",
+      start: "top 80%",
+    },
+    width: 0,
+    duration: 1,
+    delay: 0.3,
+  });
+
+  gsap.from("#about .glass", {
+    scrollTrigger: {
+      trigger: "#about .glass",
+      start: "top 75%",
+    },
+    opacity: 0,
+    y: 50,
+    duration: 1,
+  });
+
+  // Skill items staggered animation
+  gsap.from(".skill-item", {
+    scrollTrigger: {
+      trigger: ".skill-item",
+      start: "top 85%",
+    },
+    opacity: 0,
+    y: 20,
+    stagger: 0.1,
+    duration: 0.5,
+  });
 });
-
-// Update skill bars when scrolling
-window.addEventListener("scroll", showSkills);

@@ -1,99 +1,81 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
-
-    <!-- tailwind css cdn -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- aos cdn -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
-    <!-- fontawsome cdn -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+    <title>Mohammed Minhaj</title>
+    
+    <!-- icon -->
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
 
     <!-- style.css -->
-    <link rel="stylesheet" href="./style/styles.css" />
+    <link rel="stylesheet" href="./style/styles.css">
+    
+    <!-- tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+      <!-- gsap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
   </head>
-  <body
-    class="font-sans antialiased bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-300"
-  >
 
+  <body class="dark min-h-screen overflow-x-hidden">
+    <div class="animated-bg">
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+    </div>
 
-    <!-- Navbar -->
-    <nav
-      class="fixed w-full bg-white dark:bg-gray-800 shadow-lg backdrop-filter backdrop-blur-lg bg-opacity-70 dark:bg-opacity-70 z-10 transition-all"
-    >
+    <!-- navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
-          <div class="flex">
-            <div class="flex-shrink-0 flex items-center">
-              <span
-                class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-indigo-600 dark:from-blue-400 dark:to-indigo-400"
-                >Portfolio</span
-              >
-            </div>
+        <div class="flex items-center justify-between h-20">
+          <div class="flex-shrink-0 flex items-center">
 
-            <div class="hidden sm:ml-8 sm:flex sm:space-x-8">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-audio-lines-icon lucide-audio-lines"><path d="M2 10v3"/><path d="M6 6v11"/><path d="M10 3v18"/><path d="M14 8v7"/><path d="M18 5v13"/><path d="M22 10v3"/></svg>
+          </div>
+
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-center space-x-8">
               <a
                 href="#"
-                class="border-indigo-500 text-gray-900 dark:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                class="nav-item text-gray-200 hover:text-white px-3 py-2 text-lg font-medium"
+                >Home</a
               >
-                Home
-              </a>
+              <a
+                href="#about"
+                class="nav-item text-gray-200 hover:text-white px-3 py-2 text-lg font-medium"
+                >About</a
+              >
               <a
                 href="#"
-                class="border-transparent text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-200 hover:border-gray-300 dark:hover:border-gray-500 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-all"
+                class="nav-item text-gray-200 hover:text-white px-3 py-2 text-lg font-medium"
+                >Projects</a
               >
-                Projects
-              </a>
               <a
                 href="#"
-                class="border-transparent text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-200 hover:border-gray-300 dark:hover:border-gray-500 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-all"
+                class="nav-item text-gray-200 hover:text-white px-3 py-2 text-lg font-medium"
+                >Contact</a
               >
-                Blog
-              </a>
-              <a
-                href="#"
-                class="border-transparent text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-200 hover:border-gray-300 dark:hover:border-gray-500 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-all"
-              >
-                Passion
-              </a>
-              <a
-                href="#"
-                class="border-transparent text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-200 hover:border-gray-300 dark:hover:border-gray-500 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-all"
-              >
-                Contact
-              </a>
             </div>
           </div>
 
           <div class="flex items-center">
-            <div class="toggle-container mr-2">
-              <input type="checkbox" id="toggle" class="toggle-checkbox" />
-              <label for="toggle" class="toggle-slot">
-                <span class="sun-icon">
-                  <i class="fas fa-sun"></i>
-                </span>
-                <span class="toggle-button"></span>
-                <span class="moon-icon">
-                  <i class="fas fa-moon"></i>
-                </span>
-              </label>
+            <div
+              class="theme-switch theme-switch-dark mr-6 cursor-pointer"
+              id="themeSwitch"
+            >
+              <div class="switch-handle"></div>
             </div>
 
-            <div class="flex items-center sm:hidden ml-4">
+            <div class="md:hidden">
               <button
                 id="mobile-menu-button"
-                class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 transition-all"
+                class="text-white hover:text-gray-300 focus:outline-none"
               >
                 <svg
-                  class="h-6 w-6"
+                  class="h-8 w-8"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -103,7 +85,7 @@
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
-                    d="M4 6h16M4 12h16M4 18h16"
+                    d="M4 6h16M4 12h16m-7 6h7"
                   />
                 </svg>
               </button>
@@ -112,389 +94,303 @@
         </div>
       </div>
 
-      <div
-        id="mobile-menu"
-        class="sm:hidden hidden bg-white dark:bg-gray-800 transition-all"
-      >
-        <div class="pt-2 pb-3 space-y-1">
+      <div id="mobile-menu" class="md:hidden menu-transition menu-hidden">
+        <div class="glass px-2 pt-2 pb-3 space-y-1 sm:px-3 mx-4 my-2">
           <a
             href="#"
-            class="bg-indigo-50 dark:bg-indigo-900 border-indigo-500 text-indigo-700 dark:text-indigo-300 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+            class="block text-gray-200 hover:text-white px-3 py-3 rounded-md text-base font-medium border-b border-gray-700"
+            >Home</a
           >
-            Home
-          </a>
+          <a
+            href="#about"
+            class="block text-gray-200 hover:text-white px-3 py-3 rounded-md text-base font-medium border-b border-gray-700"
+            >About</a
+          >
           <a
             href="#"
-            class="border-transparent text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-500 block pl-3 pr-4 py-2 border-l-4 text-base font-medium transition-all"
+            class="block text-gray-200 hover:text-white px-3 py-3 rounded-md text-base font-medium border-b border-gray-700"
+            >Projects</a
           >
-            Projects
-          </a>
           <a
             href="#"
-            class="border-transparent text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-500 block pl-3 pr-4 py-2 border-l-4 text-base font-medium transition-all"
+            class="block text-gray-200 hover:text-white px-3 py-3 rounded-md text-base font-medium"
+            >Contact</a
           >
-            Blog
-          </a>
-          <a
-            href="#"
-            class="border-transparent text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-500 block pl-3 pr-4 py-2 border-l-4 text-base font-medium transition-all"
-          >
-            Passion
-          </a>
-          <a
-            href="#"
-            class="border-transparent text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-500 block pl-3 pr-4 py-2 border-l-4 text-base font-medium transition-all"
-          >
-            Contact
-          </a>
         </div>
       </div>
     </nav>
 
-
-
-    <div class="relative min-h-screen overflow-hidden animate-gradient">
-      <div class="shape shape-1"></div>
-      <div class="shape shape-2"></div>
-      <div class="shape shape-3"></div>
-      <div class="shape shape-4"></div>
-
-      <div
-        class="absolute inset-0 bg-gradient-to-b from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-indigo-900 opacity-50"
-      ></div>
-
-      <div
-        class="relative min-h-screen flex items-center justify-center px-4 sm:px-6"
-      >
-        <div class="max-w-4xl mx-auto text-center">
-          <!-- Profile Image with animated border -->
-          <div data-aos="flip-left" class=" w-40 h-40 inline-block animated-border mb-6">
-            <div class="flex w-full h-full items-center justify-center">
-                <img
-                  src="./assets/profile_image.jpeg"
-                  alt="Profile Picture"
-                  class="rounded-full w-36 h-36 object-cover"
-                />
-
+    <!-- hero section -->
+    <section
+      class="min-h-screen pt-20 flex flex-col items-center justify-center px-4 relative"
+      id="home"
+    >
+      <div class="max-w-7xl mx-auto w-full">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          <!-- Profile image column -->
+          <div class="md:col-span-5 flex justify-center md:justify-end">
+            <div
+              class="profile-card glass rounded-full p-2 w-64 h-64 md:w-72 md:h-72 relative"
+            >
+              <img
+                src="/api/placeholder/400/400"
+                alt="Profile"
+                class="w-full h-full object-cover rounded-full"
+              />
+              <div
+                class="absolute -bottom-2 -right-2 bg-gradient-to-r from-green-400 to-blue-500 rounded-full p-2 shadow-lg animate-pulse"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 text-white"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
             </div>
           </div>
 
-          <div
-          class="glass rounded-xl p-6 md:p-8 mt-4 transform transition-all hover:scale-105"
-          >
-
-                <h1
-                class="text-4xl sm:text-5xl md:text-5xl font-extrabold tracking-tight fade-slide-in"
-            >
-                <span class="gradient-text block">
-                Mohammed Minhaj
-                </span>
-            </h1>           
-
-
-            <div class="mt-3">
-              <span
-                id="typing-text"
-                class="text-xl md:text-2xl font-medium text-gray-700 dark:text-gray-300"
-              ></span>
-              <span
-                id="cursor"
-                class="text-xl md:text-2xl font-medium text-indigo-600 dark:text-indigo-400 animate-pulse"
-                >|</span
-              >
+          <div class="md:col-span-7 text-center md:text-left">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Your Name</h1>
+            <div class="text-xl md:text-2xl font-medium mb-6">
+              I'm a <span id="typed-text" class="gradient-text"></span>
             </div>
-
-            <div class="flex justify-center space-x-5 mt-6">
-              <a
-                href="#"
-                class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-all"
-              >
-                <i class="fab fa-github text-xl"></i>
-              </a>
-              <a
-                href="#"
-                class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-all"
-              >
-                <i class="fab fa-linkedin text-xl"></i>
-              </a>
-              <a
-                href="#"
-                class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-all"
-              >
-                <i class="fab fa-twitter text-xl"></i>
-              </a>
-              <a
-                href="#"
-                class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-all"
-              >
-                <i class="fab fa-dribbble text-xl"></i>
-              </a>
-            </div>
-
-            <div class="mt-8">
+            <p class="text-lg mb-8 max-w-lg mx-auto md:mx-0 opacity-90">
+              Crafting digital experiences that inspire and engage. Passionate
+              about creating elegant solutions to complex problems.
+            </p>
+            <div class="flex flex-wrap gap-4 justify-center md:justify-start">
               <a
                 href="#about"
-                class="inline-flex items-center justify-center p-2 rounded-full bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition-all"
+                class="px-6 py-3 bg-gradient-to-r from-green-400 to-blue-500 text-white font-medium rounded-lg hover:opacity-90 transition duration-300 shadow-lg transform hover:scale-105"
               >
-                <i
-                  class="fas fa-chevron-down text-indigo-600 dark:text-indigo-400 bounce"
-                ></i>
+                Explore My Work
+              </a>
+              <a
+                href="#"
+                class="px-6 py-3 border border-gray-400 dark:border-gray-600 font-medium rounded-lg hover:border-green-400 transition duration-300 transform hover:scale-105"
+              >
+                Contact Me
               </a>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- About Section -->
-    <div
-      id="about"
-      class="relative py-16 bg-white dark:bg-gray-800 transition-all"
-    >
-      <!-- Wave separator -->
-      <div class="absolute top-0 left-0 right-0 overflow-hidden">
-        <svg
-          data-name="Layer 1"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-          class="relative block w-full h-24"
-        >
-          <path
-            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-            class="fill-current text-blue-50 dark:text-gray-900"
-          ></path>
-        </svg>
+      <div
+        class="absolute bottom-10 left-1/2 transform -translate-x-1/2 scroll-arrow"
+      >
+        <a href="#about">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-10 w-10"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"
+            />
+          </svg>
+        </a>
       </div>
+    </section>
 
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
-        <!-- About me card -->
-        <div
-          class="glass rounded-2xl p-6 md:p-8 shadow-xl transform transition-all"
-        >
-          <div class="lg:flex lg:items-center lg:justify-between">
-            <div class="lg:w-1/2">
-              <h2
-                class="text-base text-indigo-600 dark:text-indigo-400 font-semibold tracking-wide uppercase"
-              >
-                About Me
-              </h2>
-              <p
-                class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
-              >
-                Who am I?
+    <section id="about" class="min-h-screen pt-24 pb-16 px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-5xl font-bold mb-4">
+            About <span class="gradient-text">Me</span>
+          </h2>
+          <div
+            class="w-24 h-1 bg-gradient-to-r from-green-400 to-blue-500 mx-auto"
+          ></div>
+        </div>
+
+        <div class="glass p-8 md:p-12 rounded-2xl">
+          <div class="flex flex-col items-center text-center max-w-3xl mx-auto">
+            <div class="mb-10">
+              <h3 class="text-2xl font-bold mb-6">Who I Am</h3>
+              <p class="text-lg mb-6">
+                I'm a passionate developer with expertise in both frontend and
+                backend technologies. My journey in the world of development
+                started 5 years ago, and since then, I've been crafting digital
+                experiences that combine functionality with stunning design.
               </p>
-              <div
-                class="mt-6 text-lg text-gray-500 dark:text-gray-300 space-y-4"
-              >
-                <p>
-                  I'm a passionate
-                  <span class="text-indigo-600 dark:text-indigo-400 font-medium"
-                    >Frontend Developer & UI/UX Designer</span
-                  >
-                  with over 5 years of experience creating beautiful, responsive
-                  digital experiences.
-                </p>
-                <p>
-                  My journey in web development started when I was 16, and I've
-                  been in love with crafting pixel-perfect interfaces ever
-                  since. I specialize in modern JavaScript frameworks, with a
-                  particular focus on React and Vue.js.
-                </p>
-                <p>
-                  When I'm not coding, I enjoy photography, hiking, and
-                  exploring new coffee shops. I believe in continuous learning
-                  and am currently diving into the world of 3D web animations
-                  and WebGL.
-                </p>
-              </div>
+              <p class="text-lg">
+                I specialize in building responsive web applications that not
+                only look great but also perform exceptionally well. My approach
+                to development is centered around user experience,
+                accessibility, and clean code practices.
+              </p>
+            </div>
 
-              <!-- CTA button -->
-              <div class="mt-8">
-                <a
-                  href="#"
-                  class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 transition-all"
-                >
-                  Download Resume
-                  <i class="fas fa-download ml-2"></i>
+            <div class="mt-10">
+              <h4 class="text-lg font-medium mb-6">Connect With Me</h4>
+              <div class="flex justify-center gap-5">
+                <a href="#" class="social-link" aria-label="GitHub">
+                  <div
+                    class="w-12 h-12 rounded-full glass flex items-center justify-center transition-all hover:scale-110 bg-gradient-to-r from-green-400/5 to-blue-500/5 hover:from-green-400/20 hover:to-blue-500/20 border border-white/10"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-5 w-5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                      />
+                    </svg>
+                  </div>
+                </a>
+                <a href="#" class="social-link" aria-label="LinkedIn">
+                  <div
+                    class="w-12 h-12 rounded-full glass flex items-center justify-center transition-all hover:scale-110 bg-gradient-to-r from-green-400/5 to-blue-500/5 hover:from-green-400/20 hover:to-blue-500/20 border border-white/10"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-5 w-5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                      />
+                    </svg>
+                  </div>
+                </a>
+                <a href="#" class="social-link" aria-label="Twitter">
+                  <div
+                    class="w-12 h-12 rounded-full glass flex items-center justify-center transition-all hover:scale-110 bg-gradient-to-r from-green-400/5 to-blue-500/5 hover:from-green-400/20 hover:to-blue-500/20 border border-white/10"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-5 w-5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"
+                      />
+                    </svg>
+                  </div>
+                </a>
+                <a href="#" class="social-link" aria-label="Youtube">
+                  <div
+                    class="w-12 h-12 rounded-full glass flex items-center justify-center transition-all hover:scale-110 bg-gradient-to-r from-green-400/5 to-blue-500/5 hover:from-green-400/20 hover:to-blue-500/20 border border-white/10"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-5 w-5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"
+                      />
+                    </svg>
+                  </div>
+                </a>
+                <a href="#" class="social-link" aria-label="Email">
+                  <div
+                    class="w-12 h-12 rounded-full glass flex items-center justify-center transition-all hover:scale-110 bg-gradient-to-r from-green-400/5 to-blue-500/5 hover:from-green-400/20 hover:to-blue-500/20 border border-white/10"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-5 w-5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
+                    </svg>
+                  </div>
                 </a>
               </div>
             </div>
-
-            <!-- Skills section -->
-            <div class="mt-8 lg:mt-0 lg:w-1/2 lg:pl-10">
-              <h3
-                class="text-lg font-medium text-gray-900 dark:text-white mb-4"
-              >
-                My Skills
-              </h3>
-
-              <div class="space-y-5">
-                <div>
-                  <div class="flex justify-between mb-1">
-                    <span
-                      class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                      >HTML & CSS</span
-                    >
-                    <span
-                      class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                      >95%</span
-                    >
-                  </div>
-                  <div class="skill-bar" data-progress="95%">
-                    <div
-                      class="skill-progress bg-gradient-to-r from-blue-500 to-indigo-600"
-                    ></div>
-                  </div>
-                </div>
-
-                <div>
-                  <div class="flex justify-between mb-1">
-                    <span
-                      class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                      >JavaScript</span
-                    >
-                    <span
-                      class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                      >90%</span
-                    >
-                  </div>
-                  <div class="skill-bar" data-progress="90%">
-                    <div
-                      class="skill-progress bg-gradient-to-r from-blue-500 to-indigo-600"
-                    ></div>
-                  </div>
-                </div>
-
-                <div>
-                  <div class="flex justify-between mb-1">
-                    <span
-                      class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                      >React.js</span
-                    >
-                    <span
-                      class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                      >85%</span
-                    >
-                  </div>
-                  <div class="skill-bar" data-progress="85%">
-                    <div
-                      class="skill-progress bg-gradient-to-r from-blue-500 to-indigo-600"
-                    ></div>
-                  </div>
-                </div>
-
-                <div>
-                  <div class="flex justify-between mb-1">
-                    <span
-                      class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                      >UI/UX Design</span
-                    >
-                    <span
-                      class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                      >80%</span
-                    >
-                  </div>
-                  <div class="skill-bar" data-progress="80%">
-                    <div
-                      class="skill-progress bg-gradient-to-r from-blue-500 to-indigo-600"
-                    ></div>
-                  </div>
-                </div>
-
-                <div>
-                  <div class="flex justify-between mb-1">
-                    <span
-                      class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                      >Node.js</span
-                    >
-                    <span
-                      class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                      >75%</span
-                    >
-                  </div>
-                  <div class="skill-bar" data-progress="75%">
-                    <div
-                      class="skill-progress bg-gradient-to-r from-blue-500 to-indigo-600"
-                    ></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Services -->
-        <div class="mt-16">
-          <h2
-            class="text-center text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl"
-          >
-            What I Do
-          </h2>
-          <div
-            class="mt-10 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3"
-          >
-            <!-- Service Card 1 -->
-            <div class="glass rounded-xl p-6 transition-all hover:shadow-xl">
-              <div
-                class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white"
-              >
-                <i class="fas fa-code"></i>
-              </div>
-              <h3
-                class="mt-5 text-lg font-medium text-gray-900 dark:text-white"
-              >
-                Web Development
-              </h3>
-              <p class="mt-2 text-base text-gray-500 dark:text-gray-300">
-                Creating beautiful, responsive websites with modern frameworks
-                like React, Vue.js, and Angular.
-              </p>
-            </div>
-
-            <!-- Service Card 2 -->
-            <div class="glass rounded-xl p-6 transition-all hover:shadow-xl">
-              <div
-                class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white"
-              >
-                <i class="fas fa-palette"></i>
-              </div>
-              <h3
-                class="mt-5 text-lg font-medium text-gray-900 dark:text-white"
-              >
-                UI/UX Design
-              </h3>
-              <p class="mt-2 text-base text-gray-500 dark:text-gray-300">
-                Designing intuitive user interfaces and experiences that delight
-                users and achieve business goals.
-              </p>
-            </div>
-
-            <!-- Service Card 3 -->
-            <div class="glass rounded-xl p-6 transition-all hover:shadow-xl">
-              <div
-                class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white"
-              >
-                <i class="fas fa-mobile-alt"></i>
-              </div>
-              <h3
-                class="mt-5 text-lg font-medium text-gray-900 dark:text-white"
-              >
-                Mobile Development
-              </h3>
-              <p class="mt-2 text-base text-gray-500 dark:text-gray-300">
-                Building cross-platform mobile applications using React Native
-                and Flutter.
-              </p>
-            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- aos cdn -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <script src="./script/index.js" async></script>
+    <!-- footer -->
+    <footer class="py-8 px-4">
+      <div class="max-w-7xl mx-auto">
+        <div
+          class="glass rounded-2xl p-6 bg-gradient-to-r from-green-400/5 to-blue-500/5"
+        >
+          <div
+            class="flex flex-col md:flex-row items-center justify-between gap-4"
+          >
+            <div class="flex items-center">
+              <div
+                class="h-10 w-10 rounded-lg bg-gradient-to-r from-green-400 to-blue-500 flex items-center justify-center text-white font-bold text-xl"
+              >
+                D
+              </div>
+              <div class="ml-3">
+                <div class="font-bold text-lg">DevName</div>
+                <div class="text-xs opacity-70">Full Stack Developer</div>
+              </div>
+            </div>
+
+            <div class="text-center md:text-right">
+              <div class="text-sm opacity-70">
+                &copy; <span id="year">2025</span> • Crafted with passion
+              </div>
+              <div class="text-xs opacity-50 mt-1">All rights reserved</div>
+            </div>
+          </div>
+
+          <div
+            class="h-px w-full bg-gradient-to-r from-green-400/20 to-blue-500/20 my-4"
+          ></div>
+
+          <div
+            class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm opacity-70"
+          >
+            <a href="#" class="hover:text-green-400 transition-colors"
+              >Privacy</a
+            >
+            <span class="hidden md:block">•</span>
+            <a href="#" class="hover:text-blue-400 transition-colors">Terms</a>
+            <span class="hidden md:block">•</span>
+            <a href="#about" class="hover:text-purple-400 transition-colors"
+              >Back to Top</a
+            >
+          </div>
+        </div>
+      </div>
+
+    </footer>
+
+
+    <!-- index.js -->
+     <script src="./script/index.js"></script>
+
+    <!-- typed -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+
+    <!-- lucid icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
   </body>
 </html>
