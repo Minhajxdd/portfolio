@@ -54,6 +54,13 @@ body {
   }
 }
 
+@media (max-width: 770px) {
+  .down-arrow-sec {
+    bottom: -58px !important;
+    left: 46%;
+  }
+}
+
 .nav-item {
   position: relative;
   overflow: hidden;
