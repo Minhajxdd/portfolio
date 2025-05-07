@@ -4,10 +4,10 @@ document.getElementById("year").textContent = new Date().getFullYear();
 document.addEventListener("DOMContentLoaded", function () {
   const typed = new Typed("#typed-text", {
     strings: [
-      "Frontend Developer",
       "Backend Engineer",
-      "UI/UX Designer",
-      "Full Stack Developer",
+      "Pc Enthusiast",
+      "Programmer",
+      "Full Stack Dev!",
     ],
     typeSpeed: 70,
     backSpeed: 50,
@@ -62,10 +62,12 @@ document.addEventListener("DOMContentLoaded", function () {
     if (window.scrollY > 100) {
       navbar.classList.add("glass");
       navbar.classList.add("shadow-lg");
+      navbar.classList.add("custom-nav");
       navbar.style.padding = "0.5rem 0";
     } else {
       navbar.classList.remove("glass");
       navbar.classList.remove("shadow-lg");
+      navbar.classList.remove("custom-nav");
       navbar.style.padding = "1rem 0";
     }
   });

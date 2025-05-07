@@ -48,6 +48,12 @@ body {
   width: 100%;
 }
 
+@media (max-width: 767px) {
+  .custom-nav {
+    height: 50px;
+  }
+}
+
 .nav-item {
   position: relative;
   overflow: hidden;
