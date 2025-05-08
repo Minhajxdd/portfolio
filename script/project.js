@@ -35,38 +35,42 @@ document.addEventListener("DOMContentLoaded", function () {
         "REST API",
       ],
       images: [
-        "/assets/projects/teambase_one.png",
-        "/assets/projects/teambase_two.png",
+        "/assets/projects/teambase/teambase_one.png",
+        "/assets/projects/teambase/teambase_two.png",
       ],
       liveLink: "https://teambase.mohammedminhaj.blog",
       githubLink: "https://github.com/Minhajxdd/team-base-backend",
     },
     project2: {
-      title: "AI Image Generator",
+      title: "Nex Core",
       description:
-        "An advanced web application that utilizes machine learning to generate unique images based on text prompts. Users can create, save, and download AI-generated artwork with customization options.",
-      technologies: ["Python", "TensorFlow", "Flask", "React", "AWS"],
+      `
+      NexCore is a feature-rich E-Commerce platform designed for PC hardware enthusiasts, offering a
+      seamless browsing experience with a user-friendly wishlist, a shopping cart for multiple purchases, and
+      secure payment options through Razorpay, enabling users to effortlessly buy their desired components.
+      `, 
+      technologies: ["NodeJs", "Javascript", "MVC", "EJS", "RazorPay"],
       features: [
-        "Text-to-image generation",
-        "Style transfer options",
-        "Gallery of creations",
-        "Image editing tools",
-        "User accounts",
+        "Beautiful UI/UX",
+        "Listing Hardwares",
+        "Purchase/Sell Projects",
+        "Track Orders",
+        "Secure Razor Pay Payment Gateway",
       ],
       techDetails: [
-        "Generative Adversarial Networks",
-        "Flask REST API",
-        "AWS Lambda deployment",
-        "S3 for storage",
-        "Serverless architecture",
+        "Non Block NodeJs",
+        "MVC Architecture",
+        "Secure Payment Gateway's",
+        "Ejs For SSR Templating",
+        "Mongodb For Data",
       ],
       images: [
-        "/assets/projects/teambase_one.png",
-        "/api/placeholder/800/500",
-        "/api/placeholder/800/500",
+        "/assets/projects/nexcore/nexcore1.png",
+        "/assets/projects/nexcore/nexcore2.png",
+        "/assets/projects/nexcore/nexcore3.png",
       ],
-      liveLink: "https://teambase.mohammedminhaj.blog",
-      githubLink: "https://github.com/Minhajxdd/team-base-backend",
+      liveLink: "https://nexcore.sytes.net",
+      githubLink: "https://github.com/Minhajxdd/NexCore",
     },
     project3: {
       title: "Smart Home App",
