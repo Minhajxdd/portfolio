@@ -10,31 +10,36 @@ document.addEventListener("DOMContentLoaded", function () {
   // Project data
   const projectsData = {
     project1: {
-      title: "E-Commerce Dashboard",
+      title: "Team Base",
       description:
-        "A comprehensive admin dashboard for e-commerce stores with real-time analytics, inventory management, and customer insights. Built with React for the frontend and Node.js for the backend services.",
-      technologies: ["React", "Node.js", "MongoDB", "Express", "Redux"],
+        `
+        TeamBase is a project management tool which provide all the functionalities and features that a team
+        need to have to manage and collaborate their project with ease by leveraging features like Kanban
+        Boards for task assignments and tracking progresses , team chat, notifications, and group video chat using
+        SFU (Selective Forwarding Unit).
+        `,
+      technologies: ["Node.js", "NestJs", "Angular", "Mongodb", "Rabbit MQ", "Redis", "Sfu", "Express", "SOLID"],
       features: [
-        "Real-time sales analytics",
-        "Inventory management",
-        "Customer insights",
-        "Order processing",
-        "Responsive design",
+        "Real-time Dashboard",
+        "Team management",
+        "Kanban Boards",
+        "Video Chat",
+        "Text Messages",
       ],
       techDetails: [
-        "React Hooks architecture",
-        "JWT authentication",
+        "Solid Angular architecture",
+        "Scalable Modular Repository Architecture",
+        "Highly Scalable Video Chat",
+        "World Class Engineering Solutions",
+        "Websockets for real-time updates",
         "REST API",
-        "MongoDB aggregation pipeline",
-        "Socket.io for real-time updates",
       ],
       images: [
-        "/api/placeholder/800/500",
-        "/api/placeholder/800/500",
-        "/api/placeholder/800/500",
+        "/assets/projects/teambase_one.png",
+        "/assets/projects/teambase_two.png",
       ],
-      liveLink: "https://example.com/ecommerce-dashboard",
-      githubLink: "https://github.com/yourusername/ecommerce-dashboard",
+      liveLink: "https://teambase.mohammedminhaj.blog",
+      githubLink: "https://github.com/Minhajxdd/team-base-backend",
     },
     project2: {
       title: "AI Image Generator",
@@ -56,12 +61,12 @@ document.addEventListener("DOMContentLoaded", function () {
         "Serverless architecture",
       ],
       images: [
-        "/api/placeholder/800/500",
+        "/assets/projects/teambase_one.png",
         "/api/placeholder/800/500",
         "/api/placeholder/800/500",
       ],
-      liveLink: "https://example.com/ai-image-generator",
-      githubLink: "https://github.com/yourusername/ai-image-generator",
+      liveLink: "https://teambase.mohammedminhaj.blog",
+      githubLink: "https://github.com/Minhajxdd/team-base-backend",
     },
     project3: {
       title: "Smart Home App",
