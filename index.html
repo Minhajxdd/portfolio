@@ -30,31 +30,34 @@
     <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between md:h-20 h-10">
-          <div class="flex-shrink-0 flex items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-audio-lines-icon lucide-audio-lines"
-            >
-              <path d="M2 10v3" />
-              <path d="M6 6v11" />
-              <path d="M10 3v18" />
-              <path d="M14 8v7" />
-              <path d="M18 5v13" />
-              <path d="M22 10v3" />
-            </svg>
-          </div>
+          <a href="/index.html">
+            <div class="flex-shrink-0 flex items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-audio-lines-icon lucide-audio-lines"
+              >
+                <path d="M2 10v3" />
+                <path d="M6 6v11" />
+                <path d="M10 3v18" />
+                <path d="M14 8v7" />
+                <path d="M18 5v13" />
+                <path d="M22 10v3" />
+              </svg>
+            </div>
+
+          </a>
 
           <div class="hidden md:block">
             <div class="ml-10 flex items-center space-x-8">
-              <a href="#" class="nav-item px-3 py-2 text-lg font-medium">
+              <a href="/index.html" class="nav-item px-3 py-2 text-lg font-medium">
                 Home
               </a>
 
@@ -62,7 +65,7 @@
                 About
               </a>
 
-              <a href="#" class="nav-item px-3 py-2 text-lg font-medium">
+              <a href="/pages/projects.html" class="nav-item px-3 py-2 text-lg font-medium">
                 Project
               </a>
 
@@ -105,7 +108,7 @@
       <div id="mobile-menu" class="md:hidden menu-transition menu-hidden">
         <div class="glass px-2 pt-2 pb-3 space-y-1 sm:px-3 mx-4 my-2">
           <a
-            href="#"
+            href="/index.html"
             class="block px-3 py-3 rounded-md text-base font-medium border-b border-gray-700"
             >Home</a
           >
@@ -115,7 +118,7 @@
             >About</a
           >
           <a
-            href="#"
+            href="/pages/projects.html"
             class="block px-3 py-3 rounded-md text-base font-medium border-b border-gray-700"
             >Projects</a
           >
@@ -393,6 +396,7 @@
 
     <!-- index.js -->
     <script src="./script/index.js"></script>
+    <script src="./script/global.js"></script>
 
     <!-- typed -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>

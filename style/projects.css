@@ -1,0 +1,79 @@
+    .project-card {
+      transition: transform 0.4s ease-out, box-shadow 0.4s ease;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-8px) scale(1.02);
+    }
+
+    .modal-overlay {
+      backdrop-filter: blur(8px);
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-content {
+      transition: transform 0.4s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .slide {
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .slide.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .slide:not(.active) {
+      opacity: 0;
+      z-index: 0;
+    }
+
+    .tech-pill {
+      transition: all 0.3s ease;
+    }
+    
+    .tech-pill:hover {
+      transform: translateY(-2px);
+    }
+    
+    .projects-container {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    
+    .pagination-dot {
+      transition: all 0.3s ease;
+    }
+    
+    /* Custom scrollbar for modal content */
+    .modal-content::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .dark .modal-content::-webkit-scrollbar-track {
+      background: rgba(32, 28, 53, 0.5);
+    }
+
+    .light .modal-content::-webkit-scrollbar-track {
+      background: rgba(221, 221, 221, 0.5);
+    }
+
+    .dark .modal-content::-webkit-scrollbar-thumb {
+      background: var(--secondary-color);
+      border-radius: 3px;
+    }
+
+    .light .modal-content::-webkit-scrollbar-thumb {
+      background: #13101e;
+      border-radius: 3px;
+    }
+    
+    /* Responsive tweaks */
+    @media (max-width: 640px) {
+      .slider-container {
+        height
+      }
+    }

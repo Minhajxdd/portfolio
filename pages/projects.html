@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects</title>
+
+    <!-- icon -->
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="../style/styles.css" />
+    <link rel="stylesheet" href="../style/projects.css">
+
+    <!-- tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- gsap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  </head>
+
+  <body class="dark min-h-screen overflow-x-hidden">
+    <div class="animated-bg">
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+    </div>
+
+    <!-- navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between md:h-20 h-10">
+
+            <a href="/index.html">
+                <div class="flex-shrink-0 flex items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-audio-lines-icon lucide-audio-lines"
+                  >
+                    <path d="M2 10v3" />
+                    <path d="M6 6v11" />
+                    <path d="M10 3v18" />
+                    <path d="M14 8v7" />
+                    <path d="M18 5v13" />
+                    <path d="M22 10v3" />
+                  </svg>
+                </div>
+
+            </a>
+
+
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-center space-x-8">
+              <a href="/index.html" class="nav-item px-3 py-2 text-lg font-medium">
+                Home
+              </a>
+
+              <a href="#" class="nav-item px-3 py-2 text-lg font-medium">
+                About
+              </a>
+
+              <a href="/pages/projects.html" class="nav-item px-3 py-2 text-lg font-medium">
+                Project
+              </a>
+
+              <a href="#" class="nav-item px-3 py-2 text-lg font-medium"
+                >Contact</a
+              >
+            </div>
+          </div>
+
+          <div class="flex items-center">
+            <div
+              class="theme-switch theme-switch-dark mr-6 cursor-pointer"
+              id="themeSwitch"
+            >
+              <div class="switch-handle"></div>
+            </div>
+
+            <div class="md:hidden">
+              <button id="mobile-menu-button" class="focus:outline-none">
+                <svg
+                  class="h-8 w-8"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16m-7 6h7"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="mobile-menu" class="md:hidden menu-transition menu-hidden">
+        <div class="glass px-2 pt-2 pb-3 space-y-1 sm:px-3 mx-4 my-2">
+          <a
+            href="/index.html"
+            class="block px-3 py-3 rounded-md text-base font-medium border-b border-gray-700"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="block px-3 py-3 rounded-md text-base font-medium border-b border-gray-700"
+            >About</a
+          >
+          <a
+            href="/pages/projects.html"
+            class="block px-3 py-3 rounded-md text-base font-medium border-b border-gray-700"
+            >Projects</a
+          >
+          <a href="#" class="block px-3 py-3 rounded-md text-base font-medium"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <section id="projects" class="relative py-20 overflow-hidden">
+        <!-- Animated background shapes -->
+        <div class="animated-bg">
+          <div class="shape"></div>
+          <div class="shape"></div>
+          <div class="shape"></div>
+        </div>
+    
+        <div class="container mx-auto px-4">
+          <!-- Section Header -->
+          <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold mb-4">My <span class="gradient-text">Projects</span></h2>
+            <p class="text-lg max-w-2xl mx-auto opacity-80">Explore my recent work and the technologies I've been working with.</p>
+          </div>
+    
+          <!-- Projects Grid -->
+          <div class="projects-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project Card 1 -->
+            <div class="project-card glass p-6 rounded-xl cursor-pointer" data-project="project1">
+              <div class="h-48 bg-dark-accent rounded-lg mb-4 overflow-hidden">
+                <img src="/api/placeholder/600/400" alt="Project 1" class="w-full h-full object-cover">
+              </div>
+              <h3 class="text-xl font-semibold mb-2">E-Commerce Dashboard</h3>
+              <p class="opacity-75 mb-4">Modern admin dashboard built with React and Node.js</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="tech-pill px-3 py-1 bg-dark-accent rounded-full text-xs">React</span>
+                <span class="tech-pill px-3 py-1 bg-dark-accent rounded-full text-xs">Node.js</span>
+                <span class="tech-pill px-3 py-1 bg-dark-accent rounded-full text-xs">MongoDB</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-sm opacity-60">2023</span>
+                <span class="text-secondary-color text-sm">View Project →</span>
+              </div>
+            </div>
+    
+            <!-- Project Card 2 -->
+            <div class="project-card glass p-6 rounded-xl cursor-pointer" data-project="project2">
+              <div class="h-48 bg-dark-accent rounded-lg mb-4 overflow-hidden">
+                <img src="/api/placeholder/600/400" alt="Project 2" class="w-full h-full object-cover">
+              </div>
+              <h3 class="text-xl font-semibold mb-2">AI Image Generator</h3>
+              <p class="opacity-75 mb-4">Web app that generates images using AI technology</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="tech-pill px-3 py-1 bg-dark-accent rounded-full text-xs">Python</span>
+                <span class="tech-pill px-3 py-1 bg-dark-accent rounded-full text-xs">TensorFlow</span>
+                <span class="tech-pill px-3 py-1 bg-dark-accent rounded-full text-xs">Flask</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-sm opacity-60">2024</span>
+                <span class="text-secondary-color text-sm">View Project →</span>
+              </div>
+            </div>
+    
+            <!-- Project Card 3 -->
+            <div class="project-card glass p-6 rounded-xl cursor-pointer" data-project="project3">
+              <div class="h-48 bg-dark-accent rounded-lg mb-4 overflow-hidden">
+                <img src="/api/placeholder/600/400" alt="Project 3" class="w-full h-full object-cover">
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Smart Home App</h3>
+              <p class="opacity-75 mb-4">IoT application for controlling home devices</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="tech-pill px-3 py-1 bg-dark-accent rounded-full text-xs">React Native</span>
+                <span class="tech-pill px-3 py-1 bg-dark-accent rounded-full text-xs">Firebase</span>
+                <span class="tech-pill px-3 py-1 bg-dark-accent rounded-full text-xs">IoT</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-sm opacity-60">2023</span>
+                <span class="text-secondary-color text-sm">View Project →</span>
+              </div>
+            </div>
+    
+            <!-- Project Card 4 -->
+            <div class="project-card glass p-6 rounded-xl cursor-pointer" data-project="project4">
+              <div class="h-48 bg-dark-accent rounded-lg mb-4 overflow-hidden">
+                <img src="/api/placeholder/600/400" alt="Project 4" class="w-full h-full object-cover">
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Crypto Trading Bot</h3>
+              <p class="opacity-75 mb-4">Automated cryptocurrency trading assistant</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="tech-pill px-3 py-1 bg-dark-accent rounded-full text-xs">Python</span>
+                <span class="tech-pill px-3 py-1 bg-dark-accent rounded-full text-xs">Machine Learning</span>
+                <span class="tech-pill px-3 py-1 bg-dark-accent rounded-full text-xs">APIs</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-sm opacity-60">2024</span>
+                <span class="text-secondary-color text-sm">View Project →</span>
+              </div>
+            </div>
+    
+            <!-- Project Card 5 -->
+            <div class="project-card glass p-6 rounded-xl cursor-pointer" data-project="project5">
+              <div class="h-48 bg-dark-accent rounded-lg mb-4 overflow-hidden">
+                <img src="/api/placeholder/600/400" alt="Project 5" class="w-full h-full object-cover">
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Social Media Analytics</h3>
+              <p class="opacity-75 mb-4">Data visualization dashboard for social media metrics</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="tech-pill px-3 py-1 bg-dark-accent rounded-full text-xs">Vue.js</span>
+                <span class="tech-pill px-3 py-1 bg-dark-accent rounded-full text-xs">D3.js</span>
+                <span class="tech-pill px-3 py-1 bg-dark-accent rounded-full text-xs">Express</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-sm opacity-60">2023</span>
+                <span class="text-secondary-color text-sm">View Project →</span>
+              </div>
+            </div>
+    
+            <!-- Project Card 6 -->
+            <div class="project-card glass p-6 rounded-xl cursor-pointer" data-project="project6">
+              <div class="h-48 bg-dark-accent rounded-lg mb-4 overflow-hidden">
+                <img src="/api/placeholder/600/400" alt="Project 6" class="w-full h-full object-cover">
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Portfolio Website</h3>
+              <p class="opacity-75 mb-4">My personal portfolio with interactive elements</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="tech-pill px-3 py-1 bg-dark-accent rounded-full text-xs">HTML</span>
+                <span class="tech-pill px-3 py-1 bg-dark-accent rounded-full text-xs">Tailwind CSS</span>
+                <span class="tech-pill px-3 py-1 bg-dark-accent rounded-full text-xs">GSAP</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-sm opacity-60">2024</span>
+                <span class="text-secondary-color text-sm">View Project →</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+    
+      <!-- Project Modal -->
+      <div id="projectModal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center px-4 py-8 overflow-hidden">
+        <div class="modal-content glass max-w-4xl w-full rounded-2xl  transform scale-95 my-8">
+          <div class="relative">
+            <!-- Close button -->
+            <button id="closeModal" class="absolute right-4 top-4 z-20 bg-dark-accent hover:bg-opacity-80 p-2 rounded-full shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+    
+            <!-- Image Slider -->
+            <div class="slider-container relative h-56 sm:h-64 md:h-80 lg:h-96">
+              <div class="slider-wrapper h-full">
+                <!-- Slides will be populated dynamically -->
+              </div>
+              
+              <!-- Navigation arrows -->
+              <button class="prev-slide absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-dark-accent bg-opacity-70 hover:bg-opacity-90 p-1 sm:p-2 rounded-full shadow-lg z-10">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button class="next-slide absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-dark-accent bg-opacity-70 hover:bg-opacity-90 p-1 sm:p-2 rounded-full shadow-lg z-10">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+              
+              <!-- Pagination dots -->
+              <div class="pagination-dots absolute bottom-4 left-0 right-0 flex justify-center gap-2">
+                <!-- Dots will be populated dynamically -->
+              </div>
+            </div>
+    
+            <!-- Project details -->
+            <div class="p-4 sm:p-6 md:p-8">
+              <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-2 project-title">Project Title</h2>
+              <div class="flex flex-wrap gap-2 mb-4 project-technologies">
+                <!-- Tech pills will be added dynamically -->
+              </div>
+              
+              <p class="opacity-80 mb-6 project-description text-sm sm:text-base">Project description will be loaded here.</p>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <h3 class="text-lg font-semibold mb-2">Key Features</h3>
+                  <ul class="list-disc list-inside space-y-1 opacity-80 project-features text-sm sm:text-base">
+                    <!-- Features will be added dynamically -->
+                  </ul>
+                </div>
+                
+                <div class="mt-4 md:mt-0">
+                  <h3 class="text-lg font-semibold mb-2">Technical Details</h3>
+                  <ul class="list-disc list-inside space-y-1 opacity-80 project-tech-details text-sm sm:text-base">
+                    <!-- Tech details will be added dynamically -->
+                  </ul>
+                </div>
+              </div>
+              
+              <div class="flex flex-wrap gap-3 sm:gap-4 mt-6 justify-center sm:justify-start">
+                <a href="#" class="project-live-link flex items-center gap-2 bg-secondary-color text-primary-color px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium hover:opacity-90 transition-opacity text-sm sm:text-base">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  </svg>
+                  Live Demo
+                </a>
+                <a href="#" class="project-github-link flex items-center gap-2 bg-dark-accent hover:bg-opacity-80 px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium transition-colors text-sm sm:text-base">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    <!-- footer -->
+    <footer class="py-8 px-4">
+      <div class="max-w-7xl mx-auto">
+        <div
+          class="glass rounded-2xl p-6 bg-gradient-to-r from-green-400/5 to-blue-500/5"
+        >
+          <div
+            class="flex flex-col md:flex-row items-center justify-between gap-4"
+          >
+            <div class="flex items-center">
+              <div
+                class="h-10 w-10 rounded-lg bg-gradient-to-r from-green-400 to-blue-500 flex items-center justify-center text-white font-bold text-xl"
+              >
+                M
+              </div>
+              <div class="ml-3">
+                <div class="font-bold text-lg">Mohammed Minhaj</div>
+                <div class="text-xs opacity-70">Programmer</div>
+              </div>
+            </div>
+
+            <div class="text-center md:text-right">
+              <div class="text-sm opacity-70">
+                &copy; <span id="year">2025</span> • Crafted with passion
+              </div>
+              <div class="text-xs opacity-50 mt-1">All rights reserved</div>
+            </div>
+          </div>
+
+          <div
+            class="h-px w-full bg-gradient-to-r from-green-400/20 to-blue-500/20 my-4"
+          ></div>
+
+          <div
+            class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm opacity-70"
+          >
+            <a href="#" class="hover:text-green-400 transition-colors"
+              >Privacy</a
+            >
+            <span class="hidden md:block">•</span>
+            <a href="#" class="hover:text-blue-400 transition-colors">Terms</a>
+            <span class="hidden md:block">•</span>
+            <a href="#about" class="hover:text-purple-400 transition-colors"
+              >Back to Top</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- index.js -->
+    <script src="../script/global.js"></script>
+    <script src="../script/project.js"></script>
+
+    <!-- lucid icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </body>
+</html>
+
+
+
+
