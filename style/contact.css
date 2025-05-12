@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --primary-color: #13101e;
+  --secondary-color: #53ee95;
+  --text-color: #e9e9e9;
+  --dark-accent: #201c35;
+  --light-bg: #f5f5f7;
+  --light-text: #13101e;
+}
+
+* {
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary-color) var(--dark-accent);
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  overflow-x: hidden;
+}
+
+.dark {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+.light {
+  background-color: var(--light-bg);
+  color: var(--light-text);
+}
+
+.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.animated-bg .shape {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(
+    45deg,
+    rgba(83, 238, 149, 0.3),
+    rgba(0, 194, 255, 0.3)
+  );
+  opacity: 0.6;
+  animation: float 15s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.05);
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #53ee95, #00c2ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glass-morphism {
+  backdrop-filter: blur(15px);
+  background: rgba(32, 28, 53, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: var(--secondary-color);
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.contact-input {
+  padding-left: 50px;
+  border-color: rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.contact-input:focus {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(83, 238, 149, 0.2);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.social-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  transition: transform 0.3s ease, color 0.3s ease;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(83, 238, 149, 0.1);
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+  color: #00c2ff;
+}
+
+.submit-btn {
+  background: linear-gradient(90deg, #53ee95, #00c2ff);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.submit-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #00c2ff, #53ee95);
+  transition: left 0.5s ease;
+  z-index: -1;
+}
+
+.submit-btn:hover::before {
+  left: 0;
+}
+
+.error-message {
+  color: #ff6b6b;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-5px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(5px);
+  }
+}
+
+.success-message {
+  background: linear-gradient(90deg, #53ee95, #00c2ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* reCAPTCHA Styling */
+.recaptcha-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
