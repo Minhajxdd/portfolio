@@ -27,110 +27,108 @@
       <div class="shape"></div>
     </div>
 
-    <!-- navbar -->
-    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between md:h-20 h-10">
+   <!-- navbar -->
+   <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between md:h-20 h-10">
+        <a href="/index.html">
+          <div class="flex-shrink-0 flex items-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-audio-lines-icon lucide-audio-lines"
+            >
+              <path d="M2 10v3" />
+              <path d="M6 6v11" />
+              <path d="M10 3v18" />
+              <path d="M14 8v7" />
+              <path d="M18 5v13" />
+              <path d="M22 10v3" />
+            </svg>
+          </div>
 
-            <a href="/index.html">
-                <div class="flex-shrink-0 flex items-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="lucide lucide-audio-lines-icon lucide-audio-lines"
-                  >
-                    <path d="M2 10v3" />
-                    <path d="M6 6v11" />
-                    <path d="M10 3v18" />
-                    <path d="M14 8v7" />
-                    <path d="M18 5v13" />
-                    <path d="M22 10v3" />
-                  </svg>
-                </div>
+        </a>
 
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-center space-x-8">
+            <a href="/index.html" class="nav-item px-3 py-2 text-lg font-medium">
+              Home
             </a>
 
+            <a href="/index.html#about" class="nav-item px-3 py-2 text-lg font-medium">
+              About
+            </a>
 
-          <div class="hidden md:block">
-            <div class="ml-10 flex items-center space-x-8">
-              <a href="/index.html" class="nav-item px-3 py-2 text-lg font-medium">
-                Home
-              </a>
+            <a href="/pages/projects.html" class="nav-item px-3 py-2 text-lg font-medium">
+              Project
+            </a>
 
-              <a href="/index.html#about" class="nav-item px-3 py-2 text-lg font-medium">
-                About
-              </a>
-
-              <a href="/pages/projects.html" class="nav-item px-3 py-2 text-lg font-medium">
-                Project
-              </a>
-
-              <a href="#" class="nav-item px-3 py-2 text-lg font-medium"
-                >Contact</a
-              >
-            </div>
-          </div>
-
-          <div class="flex items-center">
-            <div
-              class="theme-switch theme-switch-dark mr-6 cursor-pointer"
-              id="themeSwitch"
+            <a href="/pages/contact.html" class="nav-item px-3 py-2 text-lg font-medium"
+              >Contact</a
             >
-              <div class="switch-handle"></div>
-            </div>
+          </div>
+        </div>
 
-            <div class="md:hidden">
-              <button id="mobile-menu-button" class="focus:outline-none">
-                <svg
-                  class="h-8 w-8"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M4 6h16M4 12h16m-7 6h7"
-                  />
-                </svg>
-              </button>
-            </div>
+        <div class="flex items-center">
+          <div
+            class="theme-switch theme-switch-dark mr-6 cursor-pointer"
+            id="themeSwitch"
+          >
+            <div class="switch-handle"></div>
+          </div>
+
+          <div class="md:hidden">
+            <button id="mobile-menu-button" class="focus:outline-none">
+              <svg
+                class="h-8 w-8"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16m-7 6h7"
+                />
+              </svg>
+            </button>
           </div>
         </div>
       </div>
+    </div>
 
-      <div id="mobile-menu" class="md:hidden menu-transition menu-hidden">
-        <div class="glass px-2 pt-2 pb-3 space-y-1 sm:px-3 mx-4 my-2">
-          <a
-            href="/index.html"
-            class="block px-3 py-3 rounded-md text-base font-medium border-b border-gray-700"
-            >Home</a
-          >
-          <a
-            href="/index.html#about"
-            class="block px-3 py-3 rounded-md text-base font-medium border-b border-gray-700"
-            >About</a
-          >
-          <a
-            href="/pages/projects.html"
-            class="block px-3 py-3 rounded-md text-base font-medium border-b border-gray-700"
-            >Projects</a
-          >
-          <a href="#" class="block px-3 py-3 rounded-md text-base font-medium"
-            >Contact</a
-          >
-        </div>
+    <div id="mobile-menu" class="md:hidden menu-transition menu-hidden">
+      <div class="glass px-2 pt-2 pb-3 space-y-1 sm:px-3 mx-4 my-2">
+        <a
+          href="/index.html"
+          class="block px-3 py-3 rounded-md text-base font-medium border-b border-gray-700"
+          >Home</a
+        >
+        <a
+          href="/index.html#about"
+          class="block px-3 py-3 rounded-md text-base font-medium border-b border-gray-700"
+          >About</a
+        >
+        <a
+          href="/pages/projects.html"
+          class="block px-3 py-3 rounded-md text-base font-medium border-b border-gray-700"
+          >Projects</a
+        >
+        <a href="/pages/contact.html" class="block px-3 py-3 rounded-md text-base font-medium"
+          >Contact</a
+        >
       </div>
-    </nav>
+    </div>
+  </nav>
 
     <section id="projects" class="relative py-20 overflow-hidden">
         <!-- Animated background shapes -->
