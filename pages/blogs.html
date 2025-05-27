@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blogs Section</title>
+
+    <!-- styles -->
+    <link rel="stylesheet" href="../style/styles.css" />
+    <link rel="stylesheet" href="../style/blogs.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  </head>
+  <body>
+    <div class="animated-bg">
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+    </div>
+
+    <!-- navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between md:h-20 h-10">
+          <a href="/index.html">
+            <div class="flex-shrink-0 flex items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-audio-lines-icon lucide-audio-lines"
+              >
+                <path d="M2 10v3" />
+                <path d="M6 6v11" />
+                <path d="M10 3v18" />
+                <path d="M14 8v7" />
+                <path d="M18 5v13" />
+                <path d="M22 10v3" />
+              </svg>
+            </div>
+          </a>
+
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-center space-x-8">
+              <a
+                href="/index.html"
+                class="nav-item px-3 py-2 text-lg font-medium"
+              >
+                Home
+              </a>
+
+              <a
+                href="/index.html#about"
+                class="nav-item px-3 py-2 text-lg font-medium"
+              >
+                About
+              </a>
+
+              <a
+                href="/pages/projects.html"
+                class="nav-item px-3 py-2 text-lg font-medium"
+              >
+                Project
+              </a>
+
+              <a
+                href="/pages/contact.html"
+                class="nav-item px-3 py-2 text-lg font-medium"
+                >Contact</a
+              >
+            </div>
+          </div>
+
+          <div class="flex items-center">
+            <div
+              class="theme-switch theme-switch-dark mr-6 cursor-pointer"
+              id="themeSwitch"
+            >
+              <div style="background-color: lime" class="switch-handle"></div>
+            </div>
+
+            <div class="md:hidden">
+              <button id="mobile-menu-button" class="focus:outline-none">
+                <svg
+                  class="h-8 w-8"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16m-7 6h7"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="mobile-menu" class="md:hidden menu-transition menu-hidden">
+        <div class="glass px-2 pt-2 pb-3 space-y-1 sm:px-3 mx-4 my-2">
+          <a
+            href="/index.html"
+            class="block px-3 py-3 rounded-md text-base font-medium border-b border-gray-700"
+            >Home</a
+          >
+          <a
+            href="/index.html#about"
+            class="block px-3 py-3 rounded-md text-base font-medium border-b border-gray-700"
+            >About</a
+          >
+          <a
+            href="/pages/projects.html"
+            class="block px-3 py-3 rounded-md text-base font-medium border-b border-gray-700"
+            >Projects</a
+          >
+          <a
+            href="/pages/contact.html"
+            class="block px-3 py-3 rounded-md text-base font-medium"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <section
+      id="blogs"
+      class="mt-4 relative min-h-screen py-20 px-4 overflow-hidden"
+    >
+      <div class="max-w-7xl mx-auto">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+          <h2
+            class="text-5xl md:text-7xl font-bold mb-6 opacity-0"
+            id="blogs-title"
+          >
+            My <span class="gradient-text">Blogs</span>
+          </h2>
+          <p
+            class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto opacity-0"
+            id="blogs-subtitle"
+          >
+            Thoughts, insights, and learnings from my journey in tech and beyond
+          </p>
+          <div class="section-divider opacity-0" id="section-divider"></div>
+        </div>
+
+        <!-- Blog Grid -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          id="blogs-grid"
+        >
+          <article class=" glass p-6 h-fit">
+            <div class="flex items-center justify-between mb-4">
+              <span class="category-tag">Technology</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-3">
+              Building a Distributed Circuit Breaker in Node.js with Redis
+            </h3>
+            <p class="mb-4 leading-relaxed">
+              Exploring about a distributed simple implementation
+              of circuit breaker using nodejs and redis..
+            </p>
+            <div class="flex items-center justify-between">
+              <span class="blog-meta">4 min read</span>
+              <a href="https://medium.com/@mdminhajgdr/building-a-distributed-circuit-breaker-in-node-js-with-redis-ed40852101cc" target="_blank" class="read-more-btn">Read More</a>
+            </div>
+          </article>
+
+         
+        </div>
+      </div>
+    </section>
+
+     <!-- footer -->
+     <footer class="py-8 px-4">
+        <div class="max-w-7xl mx-auto">
+          <div
+            class="glass rounded-2xl p-6 bg-gradient-to-r from-green-400/5 to-blue-500/5"
+          >
+            <div
+              class="flex flex-col md:flex-row items-center justify-between gap-4"
+            >
+              <div class="flex items-center">
+                <div
+                  class="h-10 w-10 rounded-lg bg-gradient-to-r from-green-400 to-blue-500 flex items-center justify-center text-white font-bold text-xl"
+                >
+                  M
+                </div>
+                <div class="ml-3">
+                  <div class="font-bold text-lg">Mohammed Minhaj</div>
+                  <div class="text-xs opacity-70">Programmer</div>
+                </div>
+              </div>
+  
+              <div class="text-center md:text-right">
+                <div class="text-sm opacity-70">
+                  &copy; <span id="year">2025</span> • Crafted with passion
+                </div>
+                <div class="text-xs opacity-50 mt-1">All rights reserved</div>
+              </div>
+            </div>
+  
+            <div
+              class="h-px w-full bg-gradient-to-r from-green-400/20 to-blue-500/20 my-4"
+            ></div>
+  
+            <div
+              class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm opacity-70"
+            >
+              <a href="#" class="hover:text-green-400 transition-colors"
+                >Privacy</a
+              >
+              <span class="hidden md:block">•</span>
+              <a href="#" class="hover:text-blue-400 transition-colors">Terms</a>
+              <span class="hidden md:block">•</span>
+              <a href="#about" class="hover:text-purple-400 transition-colors"
+                >Back to Top</a
+              >
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    <script src="../script/blog.js"></script>
+
+    <script src="../script/global.js"></script>
+  </body>
+</html>
