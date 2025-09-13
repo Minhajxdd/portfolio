@@ -107,32 +107,41 @@ document.addEventListener("DOMContentLoaded", function () {
       githubLink: "https://github.com/minhajxdd/portfolio",
     },
     project4: {
-      title: "Smart Home App",
+      title: "StockWise – Inventory & Supply Chain Manager",
       description:
-        "A mobile application for controlling and monitoring smart home devices. Features include scene setting, voice commands, energy monitoring, and integration with major smart home platforms.",
-      technologies: ["React Native", "Firebase", "IoT", "Google Assistant API"],
+        "A distributed web application for real-time inventory, order, and supply chain management across warehouses and retail nodes. Built with Golang, NestJS, and Spring Boot with a modern microservices architecture.",
+      technologies: [
+        "Golang",
+        "NestJS",
+        "Spring Boot",
+        "Kafka",
+        "Istio",
+        "React",
+        "PostgreSQL",
+        "Redis"
+      ],
       features: [
-        "Device control",
-        "Scene automation",
-        "Voice commands",
-        "Energy monitoring",
-        "Security controls",
+        "Real-time inventory tracking",
+        "Multi-warehouse order routing",
+        "Event-driven alerts",
+        "Role-based access control",
+        "Forecasting & reporting"
       ],
       techDetails: [
-        "BLE and WiFi connectivity",
-        "Firebase Realtime Database",
-        "Push notifications",
-        "OAuth integration",
-        "Expo framework",
+        "Service Mesh with Istio",
+        "Circuit breakers (Resilience4j & Golang)",
+        "Kafka for event streaming",
+        "Kubernetes deployment",
+        "API Gateway with Kong"
       ],
       images: [
-        "/api/placeholder/800/500",
-        "/api/placeholder/800/500",
-        "/api/placeholder/800/500",
+        "/assets/projects/stockwise/stockwise_architecture.png",
+        "/assets/projects/stockwise/stockwise2.png",
       ],
-      liveLink: "https://example.com/smart-home-app",
-      githubLink: "https://github.com/yourusername/smart-home-app",
+      liveLink: "https://stockwise.mohammedminhaj.blog",
+      githubLink: "https://github.com/minhajxdd/stockwise",
     },
+    
     project5: {
       title: "Crypto Trading Bot",
       description:
@@ -163,8 +172,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "/api/placeholder/800/500",
         "/api/placeholder/800/500",
       ],
-      liveLink: "https://example.com/crypto-bot",
-      githubLink: "https://github.com/yourusername/crypto-trading-bot",
+      liveLink: "https://minhajxdd.github.io/crypto-bot.",
+      githubLink: "https://github.com/minhajxdd/crypto-bot",
     },
     project6: {
       title: "Social Media Analytics",
@@ -190,8 +199,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "/api/placeholder/800/500",
         "/api/placeholder/800/500",
       ],
-      liveLink: "https://example.com/social-analytics",
-      githubLink: "https://github.com/yourusername/social-analytics",
+      liveLink: "https://minhajxdd.github.io/social-analytics",
+      githubLink: "https://github.com/minhajxdd/social-analytics",
     },
   };
 
