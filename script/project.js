@@ -11,14 +11,23 @@ document.addEventListener("DOMContentLoaded", function () {
   const projectsData = {
     project1: {
       title: "Team Base",
-      description:
-        `
+      description: `
         TeamBase is a project management tool which provide all the functionalities and features that a team
         need to have to manage and collaborate their project with ease by leveraging features like Kanban
         Boards for task assignments and tracking progresses , team chat, notifications, and group video chat using
         SFU (Selective Forwarding Unit).
         `,
-      technologies: ["Node.js", "NestJs", "Angular", "Mongodb", "Rabbit MQ", "Redis", "Sfu", "Express", "SOLID"],
+      technologies: [
+        "Node.js",
+        "NestJs",
+        "Angular",
+        "Mongodb",
+        "Rabbit MQ",
+        "Redis",
+        "Sfu",
+        "Express",
+        "SOLID",
+      ],
       features: [
         "Real-time Dashboard",
         "Team management",
@@ -43,12 +52,11 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     project2: {
       title: "Nex Core",
-      description:
-      `
+      description: `
       NexCore is a feature-rich E-Commerce platform designed for PC hardware enthusiasts, offering a
       seamless browsing experience with a user-friendly wishlist, a shopping cart for multiple purchases, and
       secure payment options through Razorpay, enabling users to effortlessly buy their desired components.
-      `, 
+      `,
       technologies: ["NodeJs", "Javascript", "MVC", "EJS", "RazorPay"],
       features: [
         "Beautiful UI/UX",
@@ -73,6 +81,32 @@ document.addEventListener("DOMContentLoaded", function () {
       githubLink: "https://github.com/Minhajxdd/NexCore",
     },
     project3: {
+      title: "Portfolio Website",
+      description:
+        "My personal portfolio website featuring interactive elements, project showcases, and contact information. Built with modern web technologies for optimal quality and user experience.",
+      technologies: ["HTML", "Tailwind CSS", "GSAP", "JavaScript"],
+      features: [
+        "Interactive UI elements",
+        "Project showcase",
+        "Dark/light mode",
+        "Responsive design",
+        "Contact form with capcha",
+      ],
+      techDetails: [
+        "GSAP animations",
+        "Tailwind utility classes",
+        "Scroll-triggered effects",
+        "Optimized assets",
+        "SEO optimized",
+      ],
+      images: [
+        "/assets/projects/portfolio/portfolio1.png",
+        "/assets/projects/portfolio/portfolio2.png",
+      ],
+      liveLink: "https://mohammedminhaj.blog",
+      githubLink: "https://github.com/minhajxdd/portfolio",
+    },
+    project4: {
       title: "Smart Home App",
       description:
         "A mobile application for controlling and monitoring smart home devices. Features include scene setting, voice commands, energy monitoring, and integration with major smart home platforms.",
@@ -99,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
       liveLink: "https://example.com/smart-home-app",
       githubLink: "https://github.com/yourusername/smart-home-app",
     },
-    project4: {
+    project5: {
       title: "Crypto Trading Bot",
       description:
         "An automated cryptocurrency trading assistant that uses technical analysis and machine learning to execute trades. The system analyzes market trends and provides trading signals to maximize returns.",
@@ -132,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
       liveLink: "https://example.com/crypto-bot",
       githubLink: "https://github.com/yourusername/crypto-trading-bot",
     },
-    project5: {
+    project6: {
       title: "Social Media Analytics",
       description:
         "A data visualization dashboard for social media metrics across multiple platforms. Track engagement, growth, and campaign performance with customizable reports and insights.",
@@ -158,33 +192,6 @@ document.addEventListener("DOMContentLoaded", function () {
       ],
       liveLink: "https://example.com/social-analytics",
       githubLink: "https://github.com/yourusername/social-analytics",
-    },
-    project6: {
-      title: "Portfolio Website",
-      description:
-        "My personal portfolio website featuring interactive elements, project showcases, and contact information. Built with modern web technologies for optimal performance and user experience.",
-      technologies: ["HTML", "Tailwind CSS", "GSAP", "JavaScript"],
-      features: [
-        "Interactive UI elements",
-        "Project showcase",
-        "Dark/light mode",
-        "Responsive design",
-        "Contact form",
-      ],
-      techDetails: [
-        "GSAP animations",
-        "Tailwind utility classes",
-        "Scroll-triggered effects",
-        "Optimized assets",
-        "SEO optimized",
-      ],
-      images: [
-        "/api/placeholder/800/500",
-        "/api/placeholder/800/500",
-        "/api/placeholder/800/500",
-      ],
-      liveLink: "https://example.com/portfolio",
-      githubLink: "https://github.com/yourusername/portfolio",
     },
   };
 
